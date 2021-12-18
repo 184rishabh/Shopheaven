@@ -1,0 +1,40 @@
+.dashlist li {
+ font-size: 30px;
+ font-weight: 600;
+ font-family: sans-serif;
+ color:#0062cc;
+}
+.dashlist{
+    list-style-type: none;
+
+}
+.dashlist li a{
+    color:#0062cc;
+    text-decoration: none;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.user-btn{
+    height: 50px;
+    border:none;
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+    font-weight: 300;
+    background: #f7444e!important;
+    color:white;
+
+}
+
+.user-btn:hover{ 
+    color: black;
+}
+
+.user-inp{
+    height: 2.9rem;
+}
