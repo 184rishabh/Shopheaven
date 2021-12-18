@@ -1,6 +1,7 @@
 const express=require('express');
 const mongoose=require('mongoose');
 const dotenv=require('dotenv');
+
 const path=require('path');
 
 const authroute=require('./routes/auth')
@@ -9,7 +10,7 @@ const productroute=require('./routes/product');
 const orderroute=require('./routes/order');
 
 const app=express();
-app.use(cors())
+
 dotenv.config();
 app.use(express.json());
 
