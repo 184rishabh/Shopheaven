@@ -22,7 +22,7 @@ function SIGNUP() {
     }
     const sign=(user)=>{
        
-        return fetch('http://localhost:5000/api/auth/register',{
+        return fetch('/api/auth/register',{
             method:"POST",
             headers:{
                 Accept:'application/json',

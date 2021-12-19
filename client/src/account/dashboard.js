@@ -25,7 +25,7 @@ function DASHBOARD() {
   
   
   useEffect(async() => {
-    var order=await fetch(`http://localhost:5000/api/order/find/${id}`,{
+    var order=await fetch(`/api/order/find/${id}`,{
           method:"GET",
           headers:{
               Accept:'application/json',
@@ -44,7 +44,7 @@ function DASHBOARD() {
 
   // deleting user
     const deleteuser=(id)=>{
-        return fetch(`http://localhost:5000/api/user/${id}`,{
+        return fetch(`/api/user/${id}`,{
             method:"DELETE",
             headers:{
                 "content-type":"application/json",
@@ -97,7 +97,7 @@ function DASHBOARD() {
   );
 
     const updatepassword=async(user)=>{
-      return fetch(`http://localhost:5000/api/user/${id}`,{
+      return fetch(`/api/user/${id}`,{
           method:"PUT",
           headers:{
               Accept:'application/json',
@@ -195,14 +195,12 @@ function DASHBOARD() {
                 <div className="row justify-content-center">
                        <div className="col-md-8">
                          <div className='row justify-content-evenly'>
-                       
-                      
                          <div class="card" style={{padding:"0px"}}>
                          <h5 class="card-header">User details</h5>
                          <div class="card-body">
                            <h5 class="card-title">Username-{user.username}</h5>
                            <h5 class="card-title">Email -{user.email}</h5>
-                           
+                           <h5 class="card-title">Address -{user.address}</h5>
                          </div>
                        </div>
                    

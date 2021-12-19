@@ -19,6 +19,7 @@ function CART() {
     const [success,setsuccess]=useState(false)
     const [address, setaddress] = useState(false)
    
+   
     useEffect(() => {
         setcartnos(false)
                const fetchdata=async()=>{
@@ -169,7 +170,7 @@ async function displayRazorpay() {
     }
 
     
-    const data = await axios.post('http://localhost:5000/api/order/razorpay', {
+    const data = await axios.post('/api/order/razorpay', {
         amount:totalquantity()
       });
     
@@ -184,7 +185,7 @@ async function displayRazorpay() {
         description: 'Thanks for shopping with us',
         image: '',
         handler: async function (response) {
-            const result = await axios.post('http://localhost:5000/api/order/pay-order', {
+            const result = await axios.post('/api/order/pay-order', {
               razorpayPaymentId: response.razorpay_payment_id,
               razorpayOrderId: response.razorpay_order_id,
               razorpaySignature: response.razorpay_signature,
@@ -194,7 +195,8 @@ async function displayRazorpay() {
               address:add
               
             });
-            alert(result.data.msg);
+            alert(result.data.msg)
+            emptyCart();
           }, 
         prefill: {
             name:'',
@@ -241,6 +243,7 @@ const showaddress=()=>(
             {
                 showaddress()
             }
+            
           <table id="cart" class="table table-hover table-condensed">
             <thead>
               <tr>

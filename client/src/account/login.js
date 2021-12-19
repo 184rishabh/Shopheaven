@@ -39,7 +39,7 @@ function LOGIN() {
 
     //calling signin api from backend
     const signin=(user)=>{
-        return fetch('http://localhost:5000/api/auth/login',{
+        return fetch('/api/auth/login',{
             method:"POST",
             headers:{
                 Accept:'application/json',

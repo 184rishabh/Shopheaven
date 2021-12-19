@@ -25,7 +25,7 @@ function MENU() {
   const notify = () => toast.success("Item added to cart!",{autoClose: 1000});
   useEffect(async() => {
     const fetchdata=async()=>{
-        const {data}=await axios.get(`http://localhost:5000/api/product?new=4`)
+        const {data}=await axios.get(`/api/product?new=4`)
         setproduct(data)
         }
         fetchdata()

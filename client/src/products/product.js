@@ -71,12 +71,12 @@ function PRODUCT() {
        const fetchdata=async()=>{
            if(category=="")
            {
-           const {data}=await axios.get(`http://localhost:5000/api/product/`)
+           const {data}=await axios.get(`/api/product/`)
            setproduct(data)
            }
            else
            {
-            const {data}=await axios.get(`http://localhost:5000/api/product?category=${category}`)
+            const {data}=await axios.get(`/api/product?category=${category}`)
             setproduct(data)
            }
        }

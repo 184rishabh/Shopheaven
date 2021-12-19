@@ -13,7 +13,7 @@ function USERUPDATE() {
     const usertoken=user.token
 
     const updatepassword=(user)=>{
-        return fetch(`http://localhost:5000/api/user/${id}`,{
+        return fetch(`/api/user/${id}`,{
             method:"PUT",
             headers:{
                 Accept:'application/json',

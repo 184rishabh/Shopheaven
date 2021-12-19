@@ -13,7 +13,7 @@ function ORDER() {
     useEffect(() => {
         setorderupdated(false)
         const fetchdata=async()=>{
-            const {data}=await axios.get('http://localhost:5000/api/order/',{
+            const {data}=await axios.get('/api/order/',{
                 headers: {
                    token:`Bearer ${token}`
                   }
@@ -24,7 +24,7 @@ function ORDER() {
     }, [orderupdated])
   
     const updateorderapi=async(order,id)=>{
-        return fetch(`http://localhost:5000/api/order/${id}`,{
+        return fetch(`/api/order/${id}`,{
             method:"PUT",
             headers:{
                 Accept:'application/json',

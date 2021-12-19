@@ -61,7 +61,7 @@ function PRODUCTPAGE() {
  
   useEffect(async() => {
     const fetchdata=async()=>{
-        const {data}=await axios.get(`http://localhost:5000/api/product/find/${id}`)
+        const {data}=await axios.get(`/api/product/find/${id}`)
    
         setproduct(data)
         

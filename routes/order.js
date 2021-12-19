@@ -117,7 +117,7 @@ router.post('/pay-order', async (req, res) => {
          try{
                const saveorder=await neworder.save();
                console.log("order creation")
-               res.status(200).send({ msg: 'Order created successfully successfull'});
+               res.status(200).send({ msg: 'Order successfully'});
          }
          catch(err)
          {

@@ -24,7 +24,7 @@ function ADDPRODUCT() {
     }
 
     const addproduct=(product)=>{
-        return fetch('http://localhost:5000/api/product/',{
+        return fetch('/api/product/',{
             method:"POST",
             headers:{
                 Accept:'application/json',

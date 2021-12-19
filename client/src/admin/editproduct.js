@@ -9,7 +9,7 @@ function EDITPRODUCT() {
     const [sucess,setsucess]=useState(false)
 
     const getallproduct=()=>{
-        return fetch('http://localhost:5000/api/product/',{
+        return fetch('/api/product/',{
             method:"GET"
         }).then(response=>{
             return response.json();
@@ -26,7 +26,7 @@ function EDITPRODUCT() {
     const token=isauthenticated()
 
     const deleteproduct=(id)=>{
-        return fetch(`http://localhost:5000/api/product/${id}`,{
+        return fetch(`/api/product/${id}`,{
             method:"DELETE",
             headers:{
                 Accept:'application/json',

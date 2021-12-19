@@ -10,7 +10,7 @@ function VIEWUSER() {
     const token=isauthenticated()
 
     const getalluser=()=>{
-        return fetch('http://localhost:5000/api/user/find',{
+        return fetch('/api/user/find',{
             method:"GET",
             headers:{
                 Accept:'application/json',

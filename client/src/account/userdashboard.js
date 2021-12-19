@@ -12,7 +12,7 @@ function USERDASHBOARD() {
     const [error, seterror] = useState(false)
     
     const deleteuser=(id)=>{
-        return fetch(`http://localhost:5000/api/user/${id}`,{
+        return fetch(`/api/user/${id}`,{
             method:"DELETE",
             headers:{
                 "content-type":"application/json",
