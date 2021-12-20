@@ -138,19 +138,19 @@ function LOGIN() {
                                 <form onSubmit={clicksubmit}>
 
                                     <div className="form-row py-3 pt-5">
-                                        <div className="offset-1 col-lg-10">
+                                        <div className="login-inp-div offset-1 col-lg-10">
                                             <input onChange={handlechange('name')} type="text" className="login-input" placeholder="Username" required />
                                         </div> 
                                     </div>
 
                                     <div className="form-row">
-                                        <div className="offset-1 py-3 col-lg-10">
+                                        <div className="login-inp-div offset-1 py-3 col-lg-10">
                                             <input onChange={handlechange('password')} type="Password" className="login-input" placeholder="**********" required/>
                                         </div>
                                     </div>
 
                                     <div className="form-row py-3">
-                                        <div className="offset-1 col-lg-10">
+                                        <div className="login-inp-div offset-1 col-lg-10">
                                             <button type="submit" className="login-btn">LogIn</button>
                                         </div>
                                     </div>

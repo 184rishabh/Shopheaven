@@ -36,6 +36,7 @@ function NAV() {
   
   const signout=()=>{
     localStorage.removeItem("jwt")
+    localStorage.removeItem("products")
     history.replace("/")
   }
 

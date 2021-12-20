@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import NAV from '../components/nav'
 import axios from 'axios'
 import { isauthenticated } from '../auth/authenticate'
-
+import FOOTER from '../components/footer'
 
 function CART() {
     
@@ -219,12 +219,15 @@ async function displayRazorpay() {
     }
 }
 const showsuccess=()=>(
+    
     <div className="alert alert-danger" style={{display:success ? '':'none'}}>
+        {window.scrollTo(0, 0)}
           Login to contiue shopping
      </div>
 );
 const showaddress=()=>(
     <div className="alert alert-danger" style={{display: address? '':'none'}}>
+        {window.scrollTo(0, 0)}
           Add Address in your profile checkout
      </div>
 );
@@ -323,7 +326,7 @@ const showaddress=()=>(
                     </a>
                 </div>
             </div>    
-            
+           
         </div>      
     }
  </div>
@@ -396,6 +399,7 @@ const showaddress=()=>(
    
         </div>
            */}
+            
        </Fragment>
     )
 }

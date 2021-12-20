@@ -20,7 +20,7 @@
 
 .login-input{
     height: 50px;
-    text-indent:2rem;
+    text-indent:1.3rem;
     width: 70%;
     border: none;
     outline:none;
@@ -46,4 +46,9 @@
     transition: 0.5s;
     color:#f7444e ;
     border:2px solid #f7444e;
+}
+@media screen and (max-width: 992px) {
+    .signup-inp-div{
+        margin-right: 9%;
+    }
 }

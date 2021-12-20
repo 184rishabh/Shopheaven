@@ -20,7 +20,7 @@
 
 .login-input{
     height: 50px;
-    text-indent:1.5rem;
+    text-indent:1.3rem;
     width: 70%;
     border: none;
     outline:none;
@@ -46,4 +46,12 @@
     transition: 0.5s;
     color:#f7444e ;
     border:2px solid #f7444e;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+@media screen and (max-width: 992px) {
+    .login-inp-div{
+        margin-right: 9%;
+    }
 }

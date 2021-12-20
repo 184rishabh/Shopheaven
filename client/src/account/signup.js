@@ -98,22 +98,22 @@ function SIGNUP() {
                 </h1>  
                 <form onSubmit={clicksubmit}>
                 <div className="form-row py-3 pt-5">
-                <div className="offset-1 col-lg-10">
+                <div className="signup-inp-div offset-1 col-lg-10">
                     <input value={name} required="required" onChange={handlechange('name')} type="text" className="login-input" placeholder="Username" required />
                 </div>
                  </div>
                     <div className="form-row py-3 ">
-                        <div className="offset-1 col-lg-10">
+                        <div className="signup-inp-div offset-1 col-lg-10">
                             <input value={email} onChange={handlechange('email')} type="email" className="login-input" placeholder="Email" required />
                         </div>
                     </div>
                     <div className="form-row">
-                      <div className="offset-1 py-3 col-lg-10">
+                      <div className="signup-inp-div offset-1 py-3 col-lg-10">
                           <input value={password} onChange={handlechange('password')} type="Password" className="login-input" placeholder="**********" required />
                       </div>
                     </div>
                     <div className="form-row py-3">
-                      <div className="offset-1 col-lg-10">
+                      <div className="signup-inp-div offset-1 col-lg-10">
                           <button type="submit" className="login-btn">SIGNUP</button>
                       </div>
                     </div>

@@ -9,7 +9,7 @@ import { addProduct } from '../components/redux/cartredux'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import NAV from '../components/nav'
-
+import FOOTER from '../components/footer'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -71,7 +71,7 @@ function PRODUCT() {
        const fetchdata=async()=>{
            if(category=="")
            {
-           const {data}=await axios.get(`/api/product/`)
+           const {data}=await axios.get("/api/product")
            setproduct(data)
            }
            else
@@ -93,6 +93,7 @@ function PRODUCT() {
         <Fragment>
             <NAV>
             </NAV>
+           
             <div>
 
         <div class="container category-container">
@@ -152,6 +153,7 @@ function PRODUCT() {
         </div>
         <ToastContainer />
         </div>
+        <FOOTER/>
         </Fragment>
     )
 }

@@ -62,7 +62,7 @@ color: #f7444e;
     border: 2px solid #f7444e;
     border-radius: 7px;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .category-heading::after{
         display: none;
     }
