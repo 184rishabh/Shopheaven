@@ -9,7 +9,7 @@ import { addProduct } from '../components/redux/cartredux'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import NAV from '../components/nav'
-import FOOTER from '../components/footer'
+
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -71,7 +71,7 @@ function PRODUCT() {
        const fetchdata=async()=>{
            if(category=="")
            {
-           const {data}=await axios.get("/api/product")
+           const data = JSON.parse(localStorage.getItem('allproduct'));
            setproduct(data)
            }
            else
@@ -95,13 +95,22 @@ function PRODUCT() {
             </NAV>
            
             <div>
-
+            <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>All Products</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
         <div class="container category-container">
-        <h1 class="text-center"> All Product</h1>
         <div class="d-flex justify-content-between">
             <div>
                <h2 class="text-center category-heading">
-                   New Arrival
+                   New Arrivals
                </h2>
             </div>
              <div> 
@@ -124,36 +133,28 @@ function PRODUCT() {
         <div class="row mt-5">
         {        
         product.map(item=>(
+
         <div class="col-md-3">
-           <div class="card product-top">
-           <img src={item.img} alt="" class="img-fluid"/>
-               <div class="overlay">
-                   <button type="button" class="btn btn-secondary" title="quick shop" >
-                   <Link to={`/singleproduct/${item._id}`}> <i class=" category-icon fa-solid fa-eye">
-                     
-                       </i> </Link>
-                        
-                   </button>
-                   <button type="button" onClick={()=>{productliked()}} class="btn btn-secondary" title="like product">
-                       <i class=" category-icon fa-solid fa-heart"></i>
-                   </button>
-                   <button onClick={()=>addcart(item,item.title)} class="btn btn-secondary" title="Add to cart">
-                       <i class="category-icon fa-solid fa-cart-shopping"></i>
-                   </button>
-               </div>
+        <div class="card product-top">
+           <img src={item.img} alt="" id="product-img" class="img-fluid"/>
+                         <div class="middle">
+                         <div class="text"><Link to={`/singleproduct/${item._id}`}><button className='btn product-btn btn1 mb-1'>view product</button></Link></div>
+                         <div class="text"> <button onClick={()=>addcart(item,item.title)} className='btn product-btn btn2 mt-1'>Add to cart</button></div>
+                       </div>
            </div>
-           <div class="text-center">
+           <div class="text-center mt-3 mb-5">
                <h3>{item.title}</h3>
                <p><i class="fa fa-inr rupee" aria-hidden="true"></i>{item.price}</p>
            </div>
         </div>
+        
        ))
         }
         </div>
         </div>
         <ToastContainer />
         </div>
-        <FOOTER/>
+     
         </Fragment>
     )
 }

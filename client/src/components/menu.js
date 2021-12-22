@@ -31,6 +31,7 @@ function MENU() {
         fetchdata()
      }, [])
      const productliked = () => toast.success("product liked!",{autoClose: 1000});
+
       function handleclick(item,title)
       { 
           let products = [];
@@ -77,6 +78,13 @@ function MENU() {
           } 
 
       }
+      async function allproduct()
+      {
+        const {data}=await axios.get("http://localhost:5000/api/product")
+        console.log(data)
+        localStorage.setItem("allproduct",JSON.stringify(data));
+      }
+      allproduct()
   
       
   return (
@@ -135,7 +143,7 @@ function MENU() {
                             <img src={banner1} alt=""/>
                         </div>
                         <div class="banner__item__text">
-                            <h2>Clothing Collections 2030</h2>
+                            <h2>Clothing Collections 2022</h2>
                             <a href="/products">Shop now</a>
                         </div>
                     </div>
@@ -157,7 +165,7 @@ function MENU() {
                             <img src={banner3}alt=""/>
                         </div>
                         <div class="banner__item__text">
-                            <h2>Shoes Spring 2030</h2>
+                            <h2>Shoes Spring 2022</h2>
                             <a href="/products">Shop now</a>
                         </div>
                     </div>
@@ -167,34 +175,31 @@ function MENU() {
     </section>
 
        <section>
-           <div className="container py-1">
-             <h1 className="text-center" style={{color:'#f7444e',fontFamily:'sans-serif'}}>New Collection</h1>
+            <div className="container py-1">
+            <div class="heading_container heading_center">
+               <h2>
+                  Our <span>products</span>
+               </h2>
+            </div>
              <div class="row mt-5">
           {        
           product.map(item=>(
-          <div class="col-md-3">
-             <div class="card product-top">
-             <img src={item.img} alt="" class="img-fluid"/>
-                 <div class="overlay">
-                     <button type="button" class="btn btn-secondary" title="quick shop" >
-                     <Link to={`/singleproduct/${item._id}`}> <i class=" category-icon fa-solid fa-eye">
-                       
-                         </i> </Link>
-                          
-                     </button>
-                     <button type="button" onClick={()=>{productliked()}} class="btn btn-secondary" title="like product">
-                         <i class=" category-icon fa-solid fa-heart"></i>
-                      </button>
-                     <button onClick={()=>handleclick(item,item.title)}type="button" class="btn btn-secondary" title="Add to cart">
-                         <i class="category-icon fa-solid fa-cart-shopping"></i>
-                     </button>
-                 </div>
-             </div>
-             <div class="text-center">
-                 <h3>{item.title}</h3>
-                 <p><i class="fa fa-inr rupee" aria-hidden="true"></i>{item.price}</p>
-             </div>
-          </div>
+                 
+
+        <div class="col-md-3">
+        <div class="card product-top">
+           <img src={item.img} alt="" id="product-img" class="img-fluid"/>
+                         <div class="middle">
+                         <div class="text"><Link to={`/singleproduct/${item._id}`}><button className='btn product-btn btn1 mb-1'>view product</button></Link></div>
+                         <div class="text"> <button onClick={()=>handleclick(item,item.title)} className='btn product-btn btn2 mt-1'>Add to cart</button></div>
+                       </div>
+           </div>
+           <div class="text-center mt-3 mb-5">
+               <h3>{item.title}</h3>
+               <p><i class="fa fa-inr rupee" aria-hidden="true"></i>{item.price}</p>
+           </div>
+        </div>
+            
          ))
           }
           </div>

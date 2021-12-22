@@ -1,3 +1,5 @@
+
+
 .category-container{
     width: 100%;
     margin-top: 5%;
@@ -17,43 +19,36 @@
     border-top: 40px solid #f7444e;
     border-right: 40px solid transparent;
     position: relative;
-    left: 54px;
+    left: 49px;
     top:35px;
 }
 .category-icon:hover{
 color: #f7444e;
 }
-.overlay{
-    display: block;
+
+.product-top{
+    position: relative;
+}
+.middle {
+    transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top:10%;
-    margin-left: 0;
-    width: 70px;
-}
-.product-top:hover .overlay{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+ 
+.product-top:hover .middle {
     opacity: 1;
-    margin-left: 5%;
-    transition: 0.5s;
+  }
+
+.product-top:hover{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.1);
 }
-.overlay {
-    cursor: pointer;
-    color:white;
-    height: 35px;
-    width: 35px;
-    padding: 7px;
-    margin: 5%;
-    margin-bottom: 5%;
-}
-.overlay .btn-secondary{
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none;
-}
-.category-icon{
-    font-size: 30px;
-    margin: 5px;
-}
+
 #dropdownMenuButton1{
     background-color: #f7444e!important;
 }
@@ -62,6 +57,46 @@ color: #f7444e;
     border: 2px solid #f7444e;
     border-radius: 7px;
 }
+
+.btn1{
+    background-color: #f7444e;
+    color: white;
+ }
+ .btn2{
+   background-color: black;
+   color: white;
+ }
+ .btn1:hover{
+   border: 2px solid #f7444e;
+   background-color: transparent;
+   color: #f7444e;
+ }
+ .btn2:hover{
+   border: 2px solid black;
+   background-color: transparent;
+   color:black;  
+ 
+ }
+.product-btn{
+    width: 100%;
+    border-radius: 25px;
+}
+.product-top:hover #product-img{
+   opacity: 0.2;
+}
+.inner_page_head {
+  background: #f7444e;
+  text-align: center;
+  color: #fff;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.inner_page_head h3 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
 @media only screen and (max-width: 500px) {
     .category-heading::after{
         display: none;

@@ -221,13 +221,11 @@ async function displayRazorpay() {
 const showsuccess=()=>(
     
     <div className="alert alert-danger" style={{display:success ? '':'none'}}>
-        {window.scrollTo(0, 0)}
           Login to contiue shopping
      </div>
 );
 const showaddress=()=>(
     <div className="alert alert-danger" style={{display: address? '':'none'}}>
-        {window.scrollTo(0, 0)}
           Add Address in your profile checkout
      </div>
 );
@@ -236,6 +234,17 @@ const showaddress=()=>(
        <Fragment>
            <NAV></NAV>
        <div>
+       <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>Your Cart</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
 
                {
                    cartproduct.length>0?  
@@ -309,15 +318,15 @@ const showaddress=()=>(
 
         :
 
-        <div className="mt-5 mb-5" >
-            <div className="container mt-5" style={{paddingBottom:"10%",paddingTop:"10%"}}>  
+        <div className="mt-2 mb-5" >
+            <div className="container mt-2" style={{paddingBottom:"14%",paddingTop:"5%"}}>  
            
                 <div className="row">
                     <h1>
-                        Your Cart is empty add. 
+                        Your Cart is empty. 
                     </h1>
                     <h1>
-                        Go shop to Add some products
+                        Go shop to Add some products.
                     </h1>
                     <a href='/products'>
                     <button className='btn btn-danger mt-3 mb-3'>

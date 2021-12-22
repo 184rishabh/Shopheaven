@@ -1,7 +1,7 @@
 const express=require('express');
 const mongoose=require('mongoose');
 const dotenv=require('dotenv');
-
+const cors=require('cors');
 const path=require('path');
 
 const authroute=require('./routes/auth')
@@ -13,7 +13,7 @@ const app=express();
 
 dotenv.config();
 app.use(express.json());
-
+app.use(cors());
 app.use('/api/user',userroute);
 app.use('/api/auth',authroute);
 app.use('/api/product',productroute);
