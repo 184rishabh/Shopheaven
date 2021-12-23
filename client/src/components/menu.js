@@ -80,7 +80,7 @@ function MENU() {
       }
       async function allproduct()
       {
-        const {data}=await axios.get("http://localhost:5000/api/product")
+        const {data}=await axios.get("/api/product")
         console.log(data)
         localStorage.setItem("allproduct",JSON.stringify(data));
       }
