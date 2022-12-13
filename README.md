@@ -1,4 +1,4 @@
-# E-Commerce-APP SHOPHEAVEN
+# E-Commerce-App - SHOPHEAVEN
 
 # Usage
 - clone
@@ -12,8 +12,11 @@
 - Node.js
 - MongoDB and Mongoose
 - Express
+- ReactJs
 
-# Documentation
+# Frontend is made using the Reactjs and Javascript
+
+# Documentation of the api
 
 Base-Url-http://localhost:3000/api/
 
